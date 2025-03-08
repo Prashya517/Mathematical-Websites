@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MathX</h1>
+    </header>
+
+    <div class="container">
+        <input type="text" id="search" placeholder="Search for a tool...">
+        <div class="tools">
+            <div class="tool" onclick="openTool('calculator')">
+                <img src="calculator.webp" alt="Calculator">
+                <p>Calculator</p>
+            </div>
+            <div class="tool" onclick="openTool('armstrong')">
+                <img src="img2.jpg" alt="Armstrong Number">
+                <p>Armstrong Number</p>
+            </div>
+            <div class="tool" onclick="openTool('conversion')">
+                <img src="img4.png" alt="Number Conversion">
+                <p>Number Conversion</p>
+            </div>
+            <div class="tool" onclick="openTool('trivia')">
+                <img src="img5.jpg" alt="Math Trivia">
+                <p>Math Trivia</p>
+            </div>
+            <div class="tool" onclick="openTool('palindrome')">
+                <img src="img6.jpg" alt="Palindrome">
+                <p>Palindrome</p>
+            </div>
+            <div class="tool" onclick="openTool('quadratic')">
+                <img src="img7.jpg" alt="Quadratic Solver">
+                <p>Quadratic Solver</p>
+            </div>
+            <div class="tool" onclick="openTool('fibonacci')">
+                <img src="img8.png" alt="Fibonacci Series">
+                <p>Fibonacci Series</p>
+            </div>
+            <div class="tool" onclick="openTool('prime')">
+                <img src="prime-number.png" alt="Prime Number">
+                <p>Prime Number</p>
+            </div>
+            <div class="tool" onclick="openTool('oddeven')">
+                <img src="odd-even.png" alt="Odd/Even Checker">
+                <p>Odd/Even Checker</p>
+            </div>
+            <div class="tool" onclick="openTool('inverse')">
+                <img src="inverse.jpg" alt="Inverse Function">
+                <p>Inverse Function</p>
+            </div>
+            <div class="tool" onclick="openTool('complex')">
+                <img src="complex numbers.jpg" alt="Complex Number">
+                <p>Complex Number</p>
+            </div>
+            <div class="tool" onclick="openTool('factorial')">
+                <img src="factorial-512.png" alt="Factorial">
+                <p>Factorial</p>
+            </div>
+            <div class="tool" onclick="openTool('matrix')">
+                <img src="x.png" alt="Matrix Operations">
+                <p>Matrix Operations</p>
+            </div>
+            <div class="tool" onclick="openTool('statistics')">
+                <img src="Statictics.png" alt="Statistics">
+                <p>Statistics</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tool-section">
+        <!-- Calculator -->
+        <div id="calculator" class="tool-content">
+            <h2>Calculator</h2>
+            <input type="text" id="calc-input" placeholder="Enter expression">
+            <button onclick="calculate()">Calculate</button>
+            <p>Result: <span id="calc-result"></span></p>
+        </div>
+
+        <!-- Armstrong Number -->
+        <div id="armstrong" class="tool-content">
+            <h2>Armstrong Number</h2>
+            <input type="number" id="armstrong-input" placeholder="Enter a Number">
+            <button onclick="checkArmstrong()">Check</button>
+            <p>Result: <span id="armstrong-result"></span></p>
+        </div>
+
+        <!-- Number Conversion -->
+        <div id="conversion" class="tool-content">
+            <h2>Number Conversion</h2>
+            <input type="text" id="conv-input" placeholder="Enter number">
+            <button onclick="toBinary()">To Binary</button>
+            <button onclick="toDecimal()">To Decimal</button>
+            <p>Result: <span id="conv-result"></span></p>
+        </div>
+
+        <!-- Math Trivia -->
+        <div id="trivia" class="tool-content">
+            <h2>Math Trivia</h2>
+            <button onclick="showFact()">Show Fact</button>
+            <p>Fact: <span id="fact"></span></p>
+        </div>
+
+        <!-- Palindrome Checker -->
+        <div id="palindrome" class="tool-content">
+            <h2>Palindrome Checker</h2>
+            <input type="text" id="palindrome-input" placeholder="Enter number">
+            <button onclick="checkPalindrome()">Check</button>
+            <p>Result: <span id="palindrome-result"></span></p>
+        </div>
+
+        <!-- Quadratic Solver -->
+        <div id="quadratic" class="tool-content">
+            <h2>Quadratic Solver</h2>
+            <input type="number" id="a" placeholder="Enter a">
+            <input type="number" id="b" placeholder="Enter b">
+            <input type="number" id="c" placeholder="Enter c">
+            <button onclick="solveQuadratic()">Solve</button>
+            <p>Roots: <span id="quad-result"></span></p>
+        </div>
+
+        <!-- Fibonacci Series -->
+        <div id="fibonacci" class="tool-content">
+            <h2>Fibonacci Series</h2>
+            <input type="number" id="fibonacci-input" placeholder="Number of terms">
+            <button onclick="generateFibonacci()">Generate</button>
+            <p>Result: <span id="fibonacci-result"></span></p>
+        </div>
+
+        <!-- Prime Number Checker -->
+        <div id="prime" class="tool-content">
+            <h2>Prime Number Checker</h2>
+            <input type="number" id="prime-input" placeholder="Enter a number">
+            <button onclick="checkPrime()">Check</button>
+            <p>Result: <span id="prime-result"></span></p>
+        </div>
+
+        <!-- Odd/Even Checker -->
+        <div id="oddeven" class="tool-content">
+            <h2>Odd/Even Checker</h2>
+            <input type="number" id="oddeven-input" placeholder="Enter a number">
+            <button onclick="checkOddEven()">Check</button>
+            <p>Result: <span id="oddeven-result"></span></p>
+        </div>
+
+        <!-- Inverse Function -->
+        <div id="inverse" class="tool-content">
+            <h2>Inverse Function</h2>
+            <input type="number" id="inverse-input" placeholder="Enter a number">
+            <button onclick="calculateInverse()">Calculate</button>
+            <p>Result: <span id="inverse-result"></span></p>
+        </div>
+
+        <!-- Complex Number Operations -->
+        <div id="complex" class="tool-content">
+            <h2>Complex Number Operations</h2>
+            <input type="number" id="complex-real1" placeholder="Real part">
+            <input type="number" id="complex-imag1" placeholder="Imaginary part">
+            <input type="number" id="complex-real2" placeholder="Real part">
+            <input type="number" id="complex-imag2" placeholder="Imaginary part">
+            <button onclick="addComplex()">Add</button>
+            <button onclick="subtractComplex()">Subtract</button>
+            <p>Result: <span id="complex-result"></span></p>
+        </div>
+
+        <!-- Factorial Calculator -->
+        <div id="factorial" class="tool-content">
+            <h2>Factorial Calculator</h2>
+            <input type="number" id="factorial-input" placeholder="Enter a number">
+            <button onclick="calculateFactorial()">Calculate</button>
+            <p>Result: <span id="factorial-result"></span></p>
+        </div>
+
+        <!-- Matrix Operations -->
+        <div id="matrix" class="tool-content">
+            <h2>Matrix Operations</h2>
+            <input type="text" id="matrix1" placeholder="Matrix 1 (e.g., 1,2;3,4)">
+            <input type="text" id="matrix2" placeholder="Matrix 2 (e.g., 5,6;7,8)">
+            <button onclick="addMatrices()">Add</button>
+            <button onclick="multiplyMatrices()">Multiply</button>
+            <p>Result: <span id="matrix-result"></span></p>
+        </div>
+
+        <!-- Statistics Calculator -->
+        <div id="statistics" class="tool-content">
+            <h2>Statistics Calculator</h2>
+            <input type="text" id="statistics-input" placeholder="Enter numbers (e.g., 1,2,3)">
+            <button onclick="calculateMean()">Mean</button>
+            <button onclick="calculateMedian()">Median</button>
+            <button onclick="calculateMode()">Mode</button>
+            <p>Result: <span id="statistics-result"></span></p>
+        </div>
+    </div>
+</body>
+</html>
